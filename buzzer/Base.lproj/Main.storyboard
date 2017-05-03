@@ -155,7 +155,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.66625675154320985" green="0.14391122487037039" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92464795524691357" green="0.28351143706172843" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CYg-hL-viv" firstAttribute="centerX" secondItem="GuZ-3r-K1z" secondAttribute="centerX" id="7YH-pL-mTf"/>
                             <constraint firstItem="j3u-yd-71l" firstAttribute="centerX" secondItem="CYg-hL-viv" secondAttribute="centerX" id="Dlm-p1-st8"/>
@@ -174,10 +174,61 @@
             </objects>
             <point key="canvasLocation" x="1442" y="38"/>
         </scene>
+        <!--Toilet View Controller-->
+        <scene sceneID="k8d-cm-WyN">
+            <objects>
+                <viewController storyboardIdentifier="toiletViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zg8-9C-vlc" customClass="ToiletViewController" customModule="buzzer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Ub-D9-91a"/>
+                        <viewControllerLayoutGuide type="bottom" id="m5t-Q8-pCs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x1Y-ki-Qg5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="700" image="toiletOff" translatesAutoresizingMaskIntoConstraints="NO" id="40U-pY-YYK" userLabel="Clipper Image View">
+                                <rect key="frame" x="10" y="99" width="300" height="282"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eK-py-FDo" userLabel="Buzz Button">
+                                <rect key="frame" x="35" y="406" width="250" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="XGu-Uf-wv1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
+                                <state key="normal" title="Tap To Go!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buzzerButtonTapped:" destination="Zg8-9C-vlc" eventType="touchUpInside" id="ky1-3D-hZC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90816942732716055" green="0.97825663640000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="40U-pY-YYK" firstAttribute="centerY" secondItem="x1Y-ki-Qg5" secondAttribute="centerY" priority="999" id="91K-1h-ZRM"/>
+                            <constraint firstItem="40U-pY-YYK" firstAttribute="centerX" secondItem="x1Y-ki-Qg5" secondAttribute="centerX" id="Brq-Fw-IIX"/>
+                            <constraint firstItem="m5t-Q8-pCs" firstAttribute="top" secondItem="7eK-py-FDo" secondAttribute="bottom" multiplier="1.05" id="Cxj-9O-KuO"/>
+                            <constraint firstItem="7eK-py-FDo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="40U-pY-YYK" secondAttribute="bottom" constant="25" id="aCr-dM-sR0"/>
+                            <constraint firstItem="40U-pY-YYK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9Ub-D9-91a" secondAttribute="bottom" constant="8" id="i9F-4U-MdL"/>
+                            <constraint firstItem="7eK-py-FDo" firstAttribute="centerX" secondItem="40U-pY-YYK" secondAttribute="centerX" id="yIW-cj-DZ1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainButton" destination="7eK-py-FDo" id="obQ-3W-sb6"/>
+                        <outlet property="mainImageView" destination="40U-pY-YYK" id="JHR-ix-BHO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tG1-8d-arx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168" y="38"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bugOff" width="286" height="296"/>
         <image name="clippersOff" width="154" height="430"/>
         <image name="scaryOff" width="279" height="421"/>
+        <image name="toiletOff" width="300" height="396"/>
     </resources>
 </document>
