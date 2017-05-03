@@ -9,9 +9,9 @@
 import UIKit
 import AVFoundation
 
-class BugViewController: UIViewController, AVAudioPlayerDelegate {
+class ScaryViewController: UIViewController, AVAudioPlayerDelegate {
     
-    var buzzingAudioPlayer = AVAudioPlayer()
+    var mainAudioPlayer = AVAudioPlayer()
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var mainButton: UIButton!
     
@@ -37,24 +37,29 @@ class BugViewController: UIViewController, AVAudioPlayerDelegate {
     private func setUpAudioPlayer() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            buzzingAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "beeSound", ofType: "wav")!))
-            buzzingAudioPlayer.numberOfLoops = -1
-            buzzingAudioPlayer.delegate = self
+            mainAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "screamSound", ofType: "wav")!))
+            mainAudioPlayer.delegate = self
         } catch {
             present(UIAlertController.createSimpleAlert(withTitle: "Sound Error", message: error.localizedDescription), animated: true, completion: nil)
         }
-        buzzingAudioPlayer.prepareToPlay()
+        mainAudioPlayer.prepareToPlay()
+    }
+    
+    // MARK: - AVAudioPlayerDelegate
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        returnToDefaultState()
     }
     
     // MARK: - Actions
     
     @IBAction func buzzerButtonTapped(_ sender: Any) {
-        if buzzingAudioPlayer.isPlaying {
+        if mainAudioPlayer.isPlaying {
             returnToDefaultState()
         } else {
-            buzzingAudioPlayer.currentTime = 0
-            buzzingAudioPlayer.play()
-            mainImageView.image = UIImage(named: "bugOn")
+            mainAudioPlayer.currentTime = 0
+            mainAudioPlayer.play()
+            mainImageView.image = UIImage(named: "scaryOn")
             mainButton.setTitle("Tap to Stop", for: .normal)
         }
     }
@@ -62,9 +67,9 @@ class BugViewController: UIViewController, AVAudioPlayerDelegate {
     // MARK: - Private
     
     private func returnToDefaultState() {
-        buzzingAudioPlayer.stop()
-        mainImageView.image = UIImage(named: "bugOff")
-        mainButton.setTitle("Tap to Buzz!", for: .normal)
+        mainAudioPlayer.stop()
+        mainImageView.image = UIImage(named: "scaryOff")
+        mainButton.setTitle("Tap to Scream!", for: .normal)
     }
     
 }

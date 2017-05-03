@@ -15,7 +15,7 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
     }
     
     lazy var allViewControllers: [UIViewController] = {
-            return [self.viewControllerFromStoryboard(withName: "clipperViewController"), self.viewControllerFromStoryboard(withName: "bugViewController")]
+            return [self.viewControllerFromStoryboard(withName: "clipperViewController"), self.viewControllerFromStoryboard(withName: "bugViewController"), self.viewControllerFromStoryboard(withName: "scaryViewController")]
         }()
     
     override func viewDidLoad() {

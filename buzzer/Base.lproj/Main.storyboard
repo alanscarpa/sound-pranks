@@ -122,11 +122,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMf-p7-2wV" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="38"/>
+            <point key="canvasLocation" x="744" y="38"/>
+        </scene>
+        <!--Scary View Controller-->
+        <scene sceneID="ewT-gs-pfV">
+            <objects>
+                <viewController storyboardIdentifier="scaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6UW-JX-BBO" customClass="ScaryViewController" customModule="buzzer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YHd-RL-sXk"/>
+                        <viewControllerLayoutGuide type="bottom" id="VrD-5s-BJh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GuZ-3r-K1z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="700" image="scaryOff" translatesAutoresizingMaskIntoConstraints="NO" id="CYg-hL-viv" userLabel="Clipper Image View">
+                                <rect key="frame" x="20.5" y="99" width="279" height="282"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3u-yd-71l" userLabel="Buzz Button">
+                                <rect key="frame" x="35" y="406" width="250" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="og2-aH-Oaf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
+                                <state key="normal" title="Tap To Scream!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buzzerButtonTapped:" destination="6UW-JX-BBO" eventType="touchUpInside" id="bsO-MZ-Xy3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66625675154320985" green="0.14391122487037039" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CYg-hL-viv" firstAttribute="centerX" secondItem="GuZ-3r-K1z" secondAttribute="centerX" id="7YH-pL-mTf"/>
+                            <constraint firstItem="j3u-yd-71l" firstAttribute="centerX" secondItem="CYg-hL-viv" secondAttribute="centerX" id="Dlm-p1-st8"/>
+                            <constraint firstItem="CYg-hL-viv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="YHd-RL-sXk" secondAttribute="bottom" constant="8" id="FEe-BX-fMD"/>
+                            <constraint firstItem="CYg-hL-viv" firstAttribute="centerY" secondItem="GuZ-3r-K1z" secondAttribute="centerY" priority="999" id="NsC-ya-QyF"/>
+                            <constraint firstItem="j3u-yd-71l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CYg-hL-viv" secondAttribute="bottom" constant="25" id="dox-ys-UpX"/>
+                            <constraint firstItem="VrD-5s-BJh" firstAttribute="top" secondItem="j3u-yd-71l" secondAttribute="bottom" multiplier="1.05" id="p8p-dc-mIG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainButton" destination="j3u-yd-71l" id="m6b-qD-ax1"/>
+                        <outlet property="mainImageView" destination="CYg-hL-viv" id="5jf-EY-Hh5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OfO-Qn-9ch" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="38"/>
         </scene>
     </scenes>
     <resources>
         <image name="bugOff" width="286" height="296"/>
         <image name="clippersOff" width="154" height="430"/>
+        <image name="scaryOff" width="279" height="421"/>
     </resources>
 </document>
