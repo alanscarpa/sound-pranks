@@ -15,13 +15,13 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
     }
     
     lazy var allViewControllers: [UIViewController] = {
-            return [self.viewControllerFromStoryboard(withName: "clipperViewController")]
+            return [self.viewControllerFromStoryboard(withName: "clipperViewController"), self.viewControllerFromStoryboard(withName: "bugViewController")]
         }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
-        setViewControllers(allViewControllers, direction: .forward, animated: true, completion: nil)
+        setViewControllers([allViewControllers.first!], direction: .forward, animated: true, completion: nil)
     }
 
     private func viewControllerFromStoryboard(withName name: String) -> UIViewController {
@@ -31,11 +31,40 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
     // MARK: UIPageViewControllerDataSource
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return nil
+        guard let viewControllerIndex = allViewControllers.index(of: viewController) else {
+            return nil
+        }
+        
+        let previousIndex = viewControllerIndex - 1
+        
+        guard previousIndex >= 0 else {
+            return nil
+        }
+        
+        guard allViewControllers.count > previousIndex else {
+            return nil
+        }
+        
+        return allViewControllers[previousIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return nil
+        guard let viewControllerIndex = allViewControllers.index(of: viewController) else {
+            return nil
+        }
+        
+        let nextIndex = viewControllerIndex + 1
+        let orderedViewControllersCount = allViewControllers.count
+        
+        guard orderedViewControllersCount != nextIndex else {
+            return nil
+        }
+        
+        guard orderedViewControllersCount > nextIndex else {
+            return nil
+        }
+        
+        return allViewControllers[nextIndex]
     }
 
 }

@@ -11,8 +11,9 @@
 		4501152E1EB991F000BE41BB /* UIAlertController+Buzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4501152D1EB991F000BE41BB /* UIAlertController+Buzzer.swift */; };
 		450115301EBA4E0300BE41BB /* clipperCutting.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4501152F1EBA4E0300BE41BB /* clipperCutting.wav */; };
 		450115321EBA7C5900BE41BB /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450115311EBA7C5900BE41BB /* MainPageViewController.swift */; };
+		450115341EBA7FEC00BE41BB /* BugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450115331EBA7FEC00BE41BB /* BugViewController.swift */; };
 		45C21D5E1EB962A0009A9558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C21D5D1EB962A0009A9558 /* AppDelegate.swift */; };
-		45C21D601EB962A0009A9558 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C21D5F1EB962A0009A9558 /* MainViewController.swift */; };
+		45C21D601EB962A0009A9558 /* ClipperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C21D5F1EB962A0009A9558 /* ClipperViewController.swift */; };
 		45C21D631EB962A0009A9558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C21D611EB962A0009A9558 /* Main.storyboard */; };
 		45C21D651EB962A0009A9558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C21D641EB962A0009A9558 /* Assets.xcassets */; };
 		45C21D681EB962A0009A9558 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C21D661EB962A0009A9558 /* LaunchScreen.storyboard */; };
@@ -23,9 +24,10 @@
 		4501152D1EB991F000BE41BB /* UIAlertController+Buzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Buzzer.swift"; sourceTree = "<group>"; };
 		4501152F1EBA4E0300BE41BB /* clipperCutting.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clipperCutting.wav; sourceTree = "<group>"; };
 		450115311EBA7C5900BE41BB /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		450115331EBA7FEC00BE41BB /* BugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugViewController.swift; sourceTree = "<group>"; };
 		45C21D5A1EB962A0009A9558 /* buzzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C21D5D1EB962A0009A9558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45C21D5F1EB962A0009A9558 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		45C21D5F1EB962A0009A9558 /* ClipperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipperViewController.swift; sourceTree = "<group>"; };
 		45C21D621EB962A0009A9558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45C21D641EB962A0009A9558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45C21D671EB962A0009A9558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,8 +84,9 @@
 				4501152C1EB991C200BE41BB /* Extensions */,
 				450115291EB9907800BE41BB /* Sounds */,
 				45C21D5D1EB962A0009A9558 /* AppDelegate.swift */,
-				45C21D5F1EB962A0009A9558 /* MainViewController.swift */,
+				45C21D5F1EB962A0009A9558 /* ClipperViewController.swift */,
 				450115311EBA7C5900BE41BB /* MainPageViewController.swift */,
+				450115331EBA7FEC00BE41BB /* BugViewController.swift */,
 				45C21D611EB962A0009A9558 /* Main.storyboard */,
 				45C21D641EB962A0009A9558 /* Assets.xcassets */,
 				45C21D661EB962A0009A9558 /* LaunchScreen.storyboard */,
@@ -168,7 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				450115321EBA7C5900BE41BB /* MainPageViewController.swift in Sources */,
-				45C21D601EB962A0009A9558 /* MainViewController.swift in Sources */,
+				450115341EBA7FEC00BE41BB /* BugViewController.swift in Sources */,
+				45C21D601EB962A0009A9558 /* ClipperViewController.swift in Sources */,
 				4501152E1EB991F000BE41BB /* UIAlertController+Buzzer.swift in Sources */,
 				45C21D5E1EB962A0009A9558 /* AppDelegate.swift in Sources */,
 			);

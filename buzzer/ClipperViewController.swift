@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class MainViewController: UIViewController, AVAudioPlayerDelegate {
+class ClipperViewController: UIViewController, AVAudioPlayerDelegate {
 
     var buzzingAudioPlayer = AVAudioPlayer()
     var cuttingAudioPlayer = AVAudioPlayer()
@@ -41,6 +41,8 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
         cuttingAudioPlayer.prepareToPlay()
     }
 
+    // MARK: - Actions
+    
     @IBAction func buzzerButtonTapped(_ sender: Any) {
         if buzzingAudioPlayer.isPlaying {
             buzzingAudioPlayer.stop()
@@ -62,6 +64,4 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
 
-
 }
-
