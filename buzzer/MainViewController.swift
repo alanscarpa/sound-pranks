@@ -9,10 +9,12 @@
 import UIKit
 import AVFoundation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, AVAudioPlayerDelegate {
 
     var buzzingAudioPlayer = AVAudioPlayer()
     var cuttingAudioPlayer = AVAudioPlayer()
+    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var mainButton: UIButton!
     
     override var shouldAutorotate: Bool {
         return false
@@ -20,6 +22,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainButton.layer.cornerRadius = 12
         setUpAudioPlayer()
     }
     
@@ -28,6 +31,7 @@ class MainViewController: UIViewController {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             buzzingAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "buzzSound", ofType: "wav")!))
             buzzingAudioPlayer.numberOfLoops = -1
+            buzzingAudioPlayer.delegate = self
             cuttingAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "clipperCutting", ofType: "wav")!))
             cuttingAudioPlayer.numberOfLoops = -1
         } catch {
@@ -40,9 +44,13 @@ class MainViewController: UIViewController {
     @IBAction func buzzerButtonTapped(_ sender: Any) {
         if buzzingAudioPlayer.isPlaying {
             buzzingAudioPlayer.stop()
+            mainImageView.image = UIImage(named: "clippersOff")
+            mainButton.setTitle("Tap to Buzz!", for: .normal)
         } else {
             buzzingAudioPlayer.currentTime = 0
             buzzingAudioPlayer.play()
+            mainImageView.image = UIImage(named: "clippersOn")
+            mainButton.setTitle("Hold to Cut!", for: .normal)
         }
     }
     
