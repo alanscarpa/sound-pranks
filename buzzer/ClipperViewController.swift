@@ -20,11 +20,27 @@ class ClipperViewController: UIViewController, AVAudioPlayerDelegate {
         return false
     }
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainButton.layer.cornerRadius = 12
         setUpAudioPlayer()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        returnToDefaultState()
+    }
+    
+    private func returnToDefaultState() {
+        cuttingAudioPlayer.stop()
+        buzzingAudioPlayer.stop()
+        mainImageView.image = UIImage(named: "clippersOff")
+        mainButton.setTitle("Tap to Buzz!", for: .normal)
+    }
+    
+    // MARK: - AVAudioPlayer
     
     private func setUpAudioPlayer() {
         do {
@@ -45,9 +61,7 @@ class ClipperViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func buzzerButtonTapped(_ sender: Any) {
         if buzzingAudioPlayer.isPlaying {
-            buzzingAudioPlayer.stop()
-            mainImageView.image = UIImage(named: "clippersOff")
-            mainButton.setTitle("Tap to Buzz!", for: .normal)
+            returnToDefaultState()
         } else {
             buzzingAudioPlayer.currentTime = 0
             buzzingAudioPlayer.play()

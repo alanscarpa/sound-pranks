@@ -12,6 +12,7 @@
 		450115301EBA4E0300BE41BB /* clipperCutting.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4501152F1EBA4E0300BE41BB /* clipperCutting.wav */; };
 		450115321EBA7C5900BE41BB /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450115311EBA7C5900BE41BB /* MainPageViewController.swift */; };
 		450115341EBA7FEC00BE41BB /* BugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450115331EBA7FEC00BE41BB /* BugViewController.swift */; };
+		450115361EBA8AA000BE41BB /* beeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 450115351EBA8AA000BE41BB /* beeSound.wav */; };
 		45C21D5E1EB962A0009A9558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C21D5D1EB962A0009A9558 /* AppDelegate.swift */; };
 		45C21D601EB962A0009A9558 /* ClipperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C21D5F1EB962A0009A9558 /* ClipperViewController.swift */; };
 		45C21D631EB962A0009A9558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C21D611EB962A0009A9558 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		4501152F1EBA4E0300BE41BB /* clipperCutting.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clipperCutting.wav; sourceTree = "<group>"; };
 		450115311EBA7C5900BE41BB /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		450115331EBA7FEC00BE41BB /* BugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugViewController.swift; sourceTree = "<group>"; };
+		450115351EBA8AA000BE41BB /* beeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beeSound.wav; sourceTree = "<group>"; };
 		45C21D5A1EB962A0009A9558 /* buzzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C21D5D1EB962A0009A9558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45C21D5F1EB962A0009A9558 /* ClipperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipperViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				4501152A1EB9909900BE41BB /* buzzSound.wav */,
 				4501152F1EBA4E0300BE41BB /* clipperCutting.wav */,
+				450115351EBA8AA000BE41BB /* beeSound.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45C21D681EB962A0009A9558 /* LaunchScreen.storyboard in Resources */,
+				450115361EBA8AA000BE41BB /* beeSound.wav in Resources */,
 				4501152B1EB9909900BE41BB /* buzzSound.wav in Resources */,
 				45C21D651EB962A0009A9558 /* Assets.xcassets in Resources */,
 				450115301EBA4E0300BE41BB /* clipperCutting.wav in Resources */,

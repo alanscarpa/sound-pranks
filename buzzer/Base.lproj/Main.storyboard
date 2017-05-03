@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.81120997299382713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="swp-Aw-aIV" secondAttribute="bottom" multiplier="1.05" id="6ai-j6-U71"/>
                             <constraint firstItem="swp-Aw-aIV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QFg-jc-n0H" secondAttribute="bottom" constant="25" id="Dxd-Kf-d5n"/>
@@ -75,25 +75,58 @@
             <point key="canvasLocation" x="31.875" y="37.5"/>
         </scene>
         <!--Bug View Controller-->
-        <scene sceneID="qdz-WO-nVU">
+        <scene sceneID="lFj-1W-Z8C">
             <objects>
-                <viewController storyboardIdentifier="bugViewController" id="0qj-0V-aNI" customClass="BugViewController" customModule="buzzer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bugViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RU9-wx-mut" customClass="BugViewController" customModule="buzzer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yLG-UT-Smv"/>
-                        <viewControllerLayoutGuide type="bottom" id="obz-6a-Vea"/>
+                        <viewControllerLayoutGuide type="top" id="Vm4-WF-MZt"/>
+                        <viewControllerLayoutGuide type="bottom" id="6gO-tY-6Nk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rVc-t7-W3y">
+                    <view key="view" contentMode="scaleToFill" id="Qa8-wk-1oI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99928373100000001" green="0.15537679200000001" blue="0.22883668539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="700" image="bugOff" translatesAutoresizingMaskIntoConstraints="NO" id="FCQ-in-QeC" userLabel="Clipper Image View">
+                                <rect key="frame" x="17" y="99" width="286" height="282"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3Q-Cb-xH5" userLabel="Buzz Button">
+                                <rect key="frame" x="35" y="406" width="250" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="9Sq-kj-OiM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
+                                <state key="normal" title="Tap To Buzz!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buzzerButtonTapped:" destination="RU9-wx-mut" eventType="touchUpInside" id="4hu-Oc-RLR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77736786265432101" green="0.8169005594135802" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e3Q-Cb-xH5" firstAttribute="centerX" secondItem="FCQ-in-QeC" secondAttribute="centerX" id="4Vv-Q4-EOt"/>
+                            <constraint firstItem="FCQ-in-QeC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Vm4-WF-MZt" secondAttribute="bottom" constant="8" id="BQ2-gn-Z1w"/>
+                            <constraint firstItem="FCQ-in-QeC" firstAttribute="centerX" secondItem="Qa8-wk-1oI" secondAttribute="centerX" id="SFf-Ip-az7"/>
+                            <constraint firstItem="6gO-tY-6Nk" firstAttribute="top" secondItem="e3Q-Cb-xH5" secondAttribute="bottom" multiplier="1.05" id="TBp-Rd-asU"/>
+                            <constraint firstItem="FCQ-in-QeC" firstAttribute="centerY" secondItem="Qa8-wk-1oI" secondAttribute="centerY" priority="999" id="aLb-sC-cDH"/>
+                            <constraint firstItem="e3Q-Cb-xH5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FCQ-in-QeC" secondAttribute="bottom" constant="25" id="rkS-z8-l8R"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainButton" destination="e3Q-Cb-xH5" id="Jrh-SI-5Ap"/>
+                        <outlet property="mainImageView" destination="FCQ-in-QeC" id="p7R-sB-Kzp"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1xt-yP-gai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMf-p7-2wV" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756" y="38"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bugOff" width="286" height="296"/>
         <image name="clippersOff" width="154" height="430"/>
     </resources>
 </document>

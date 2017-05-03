@@ -12,56 +12,61 @@ import AVFoundation
 class BugViewController: UIViewController, AVAudioPlayerDelegate {
     
     var buzzingAudioPlayer = AVAudioPlayer()
-    var cuttingAudioPlayer = AVAudioPlayer()
-//    @IBOutlet weak var mainImageView: UIImageView!
-//    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var mainButton: UIButton!
     
     override var shouldAutorotate: Bool {
         return false
     }
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //mainButton.layer.cornerRadius = 12
+        mainButton.layer.cornerRadius = 12
         setUpAudioPlayer()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        returnToDefaultState()
+    }
+    
+    // MARK: - AVAudioPlayer
     
     private func setUpAudioPlayer() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            buzzingAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "buzzSound", ofType: "wav")!))
+            buzzingAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "beeSound", ofType: "wav")!))
             buzzingAudioPlayer.numberOfLoops = -1
             buzzingAudioPlayer.delegate = self
-            cuttingAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "clipperCutting", ofType: "wav")!))
-            cuttingAudioPlayer.numberOfLoops = -1
         } catch {
             present(UIAlertController.createSimpleAlert(withTitle: "Sound Error", message: error.localizedDescription), animated: true, completion: nil)
         }
         buzzingAudioPlayer.prepareToPlay()
-        cuttingAudioPlayer.prepareToPlay()
     }
     
     // MARK: - Actions
     
-//    @IBAction func buzzerButtonTapped(_ sender: Any) {
-//        if buzzingAudioPlayer.isPlaying {
-//            buzzingAudioPlayer.stop()
-//            mainImageView.image = UIImage(named: "clippersOff")
-//            mainButton.setTitle("Tap to Buzz!", for: .normal)
-//        } else {
-//            buzzingAudioPlayer.currentTime = 0
-//            buzzingAudioPlayer.play()
-//            mainImageView.image = UIImage(named: "clippersOn")
-//            mainButton.setTitle("Hold to Cut!", for: .normal)
-//        }
-//    }
-//    
-//    @IBAction func buzzButtonLongPressHeld(_ sender: AnyObject) {
-//        if sender.state == .began, buzzingAudioPlayer.isPlaying {
-//            cuttingAudioPlayer.play()
-//        } else if sender.state == .ended {
-//            cuttingAudioPlayer.stop()
-//        }
-//    }
+    @IBAction func buzzerButtonTapped(_ sender: Any) {
+        if buzzingAudioPlayer.isPlaying {
+            buzzingAudioPlayer.stop()
+            mainImageView.image = UIImage(named: "bugOff")
+            mainButton.setTitle("Tap to Buzz!", for: .normal)
+        } else {
+            buzzingAudioPlayer.currentTime = 0
+            buzzingAudioPlayer.play()
+            mainImageView.image = UIImage(named: "bugOn")
+            mainButton.setTitle("Tap to Stop", for: .normal)
+        }
+    }
+    
+    // MARK: - Private
+    
+    private func returnToDefaultState() {
+        buzzingAudioPlayer.stop()
+        mainImageView.image = UIImage(named: "bugOff")
+        mainButton.setTitle("Tap to Buzz!", for: .normal)
+    }
     
 }
