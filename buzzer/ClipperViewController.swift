@@ -15,6 +15,7 @@ class ClipperViewController: UIViewController, AVAudioPlayerDelegate {
     var cuttingAudioPlayer = AVAudioPlayer()
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var swipeLabel: UILabel!
     
     override var shouldAutorotate: Bool {
         return false
@@ -31,6 +32,7 @@ class ClipperViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         returnToDefaultState()
+        swipeLabel.isHidden = true
     }
     
     private func returnToDefaultState() {
