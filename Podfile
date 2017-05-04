@@ -6,5 +6,6 @@ target 'buzzer' do
   use_frameworks!
 
   # Pods for buzzer
-
+  pod 'PureLayout'
+  
 end
